@@ -159,6 +159,7 @@ It is possible to set the direction per font, but this should not be necessary.
 
 ### Load the font from an input stream
 You can load the font from an input stream.
+
 [GlyphLayoutInputStream.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutInputStream.java)
 
 [GlyphLayoutInputStream.pdf](https://github.com/user-attachments/files/26327018/GlyphLayoutInputStream.pdf)
@@ -166,6 +167,7 @@ You can load the font from an input stream.
 
 ### Specify kerning and ligatures per document
 Optionally you can specify kerning and ligatures per document.
+
 [GlyphLayoutKernLiga.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLiga.java)
 
 [ GlyphLayoutKernLiga.pdf](https://github.com/user-attachments/files/26327020/GlyphLayoutKernLiga.pdf)
@@ -173,6 +175,7 @@ Optionally you can specify kerning and ligatures per document.
 
 ### Specify kerning and ligatures per font
 Optionally you can specify kerning and ligatures per font.
+
 [GlyphLayoutKernLigaPerFont.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLigaPerFont.java)
 
 [GlyphLayoutKernLigaPerFont.pdf](https://github.com/user-attachments/files/26327021/GlyphLayoutKernLigaPerFont.pdf)
