@@ -11,7 +11,7 @@ PDF file. For complex scripts glyph substitution and reordering is necessary.
 OpenPDF can process such texts starting with release 1.3.24.
 This page describes the usage for release 3.0.4 or newer with `GlyphLayoutManager`.
 
-For release 3.0.3 using (the now deprecated) `LayoutProcessor` see [Accents, DIN 91379, non Latin scripts (2025-09-21)](https://github.com/LibrePDF/OpenPDF/wiki/C/5273d85f551497abb7d79625e73576087ad55eb3),
+For release 3.0.3 using (the now deprecated) `LayoutProcessor` see [Accents, DIN 91379, non Latin scripts (2026-04-02)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5654d29adfebf5100edabdde2d2792b74fa66fbe),
 for older releases see [Accents, DIN 91379, non Latin scripts (2025-06-06)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5d4f967472cc1459cb484adfa86e4ad1db19b8cc).
 
 Internally OpenPDF uses `Java2D` builtin routines for glyph layout, reordering and substitution.
