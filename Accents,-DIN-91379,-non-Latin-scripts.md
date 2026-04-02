@@ -1,4 +1,4 @@
-# Accents, DIN 91379, non Latin scripts
+# Draft: Accents, DIN 91379, non Latin scripts
 
 ## This is the description of the next version
 Attention, the version described here is not yet available.
