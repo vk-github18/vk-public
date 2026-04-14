@@ -18,11 +18,10 @@ Internally OpenPDF uses `Java2D` builtin routines for glyph layout, reordering a
 Since `Java 9` these routines rely on the `HarfBuzz` shaping library.
 
 ## DIN 91379
-We tested this approach with letters conforming to "DIN 91379: Characters and defined character sequences in Unicode for the electronic processing of names and data exchange in Europe, with CD-ROM" (and the predecessor DIN SPEC 91379) which describes a subset of Unicode consisting mainly of
-Latin letters and diacritic signs. This standard is mandatory for the data exchange of the German administration with citizens and businesses since Nov. 2024.
+We tested this approach with letters conforming to "DIN 91379: Characters and defined character sequences in Unicode for the electronic processing of names and data exchange in Europe, with CD-ROM" (and the predecessor DIN SPEC 91379) which describes a subset of Unicode consisting mainly of Latin letters and diacritic signs. This standard is mandatory for the data exchange of the German administration with citizens and businesses since Nov. 2024.
 
 ## Non-Latin scripts
-The processing of text in other languages and scripts using this approach should be possible, you are invited
+The processing of text in other languages, bidirectional and complex scripts using this approach is possible, you are invited
 to try it and share the results.
 
 ## Multithreading
@@ -119,9 +118,9 @@ is thrown. All fonts have to be loaded with `GlyphLayoutManager.loadFont`.
 
 ## FopGlyphProcessor
 
-GlyphLayoutManager and [`FopGlyphProcessor`](https://github.com/LibrePDF/OpenPDF/wiki/Multi-byte-character-language-support-with-TTF-fonts) can't be used together, you have to decide for one of them.
-If you use GlyphLayoutProcessor, FopGlyphProcessor is switched off using document.setGlyphSubstitutionEnabled().
-This call disables FopGlyphProcessor, and its functionality like glyph substitution and more will be provided by GlyphLayoutManager.
+`GlyphLayoutManager` and [`FopGlyphProcessor`](https://github.com/LibrePDF/OpenPDF/wiki/Multi-byte-character-language-support-with-TTF-fonts) can't be used together, you have to decide for one of them.
+If you use `GlyphLayoutProcessor`, `FopGlyphProcessor` is switched off using `document.setGlyphSubstitutionEnabled()`.
+This call disables `FopGlyphProcessor`, and its functionality like glyph substitution and more will be provided by `GlyphLayoutManager`.
 
 ## Examples
 ### Producing a document
@@ -189,14 +188,13 @@ Optionally you can specify kerning and ligatures per font.
 ### Use GlyphLayoutManager for Letters from the Unicode Supplementary Multilingual Plane
 Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
-[GlyphLayoutSMP](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutSMP.java)
+[GlyphLayoutSMP.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutSMP.java)
 
 [GlyphLayoutSMP.pdf](https://github.com/user-attachments/files/26327026/GlyphLayoutSMP.pdf)
 
 ### Use GlyphLayoutManager with an image
 
-[GlyphLayoutWithImage](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutWithImage.java)
-
+[GlyphLayoutWithImage.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutWithImage.java)
 [GlyphLayoutWithImage.pdf](https://github.com/user-attachments/files/26327030/GlyphLayoutWithImage.pdf)
 
 
