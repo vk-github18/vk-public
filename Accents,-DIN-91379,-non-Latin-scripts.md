@@ -126,13 +126,13 @@ This call disables `FopGlyphProcessor`, and its functionality like glyph substit
 ### Producing a document
 This example shows the correct rendering for all letters from [DIN 91379](https://en.wikipedia.org/wiki/DIN_91379).
 
-Code: [GlyphLayoutDin91379.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutDin91379.java)
+Code: [GlyphLayoutDin91379.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutDin91379.java)
 
 Result: [GlyphLayoutDin91379.pdf](https://github.com/user-attachments/files/26326914/GlyphLayoutDin91379.pdf)
 
 
 ### Processing a form
-[GlyphLayoutFormDin91379.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutFormDin91379.java)
+[GlyphLayoutFormDin91379.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutFormDin91379.java)
 
 [GlyphLayoutFormDin91379.pdf](https://github.com/user-attachments/files/26327010/GlyphLayoutFormDin91379.pdf)
 
@@ -142,12 +142,12 @@ Result: [GlyphLayoutDin91379.pdf](https://github.com/user-attachments/files/2632
 Java's <code>Bidi</code>-class is used to deduce the text direction for each chunk of text,
 it should not be necessary to specify the text direction per font explicitly.
 
-[GlyphLayoutBidi.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidi.java)
+[GlyphLayoutBidi.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidi.java)
 
 [GlyphLayoutBidi.pdf](https://github.com/user-attachments/files/26327014/GlyphLayoutBidi.pdf)
 
 
-[GlyphLayoutBidiRotated.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidiRotated.java)
+[GlyphLayoutBidiRotated.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidiRotated.java)
 
 [GlyphLayoutBidiRotated.pdf](https://github.com/user-attachments/files/26327016/GlyphLayoutBidiRotated.pdf)
 
@@ -155,7 +155,7 @@ it should not be necessary to specify the text direction per font explicitly.
 ### Specify direction per font
 It is possible to set the direction per font, but this should not be necessary.
 
-[GlyphLayoutBidiPerFont.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidiPerFont.java)
+[GlyphLayoutBidiPerFont.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutBidiPerFont.java)
 
 [GlyphLayoutBidiPerFont.pdf](https://github.com/user-attachments/files/26326910/GlyphLayoutBidiPerFont.pdf)
 
@@ -163,7 +163,7 @@ It is possible to set the direction per font, but this should not be necessary.
 ### Load the font from an input stream
 You can load the font from an input stream.
 
-[GlyphLayoutInputStream.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutInputStream.java)
+[GlyphLayoutInputStream.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutInputStream.java)
 
 [GlyphLayoutInputStream.pdf](https://github.com/user-attachments/files/26327018/GlyphLayoutInputStream.pdf)
 
@@ -171,7 +171,7 @@ You can load the font from an input stream.
 ### Specify kerning and ligatures per document
 Optionally you can specify kerning and ligatures per document.
 
-[GlyphLayoutKernLiga.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLiga.java)
+[GlyphLayoutKernLiga.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLiga.java)
 
 [ GlyphLayoutKernLiga.pdf](https://github.com/user-attachments/files/26327020/GlyphLayoutKernLiga.pdf)
 
@@ -179,7 +179,7 @@ Optionally you can specify kerning and ligatures per document.
 ### Specify kerning and ligatures per font
 Optionally you can specify kerning and ligatures per font.
 
-[GlyphLayoutKernLigaPerFont.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLigaPerFont.java)
+[GlyphLayoutKernLigaPerFont.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutKernLigaPerFont.java)
 
 [GlyphLayoutKernLigaPerFont.pdf](https://github.com/user-attachments/files/26327021/GlyphLayoutKernLigaPerFont.pdf)
 
@@ -188,13 +188,13 @@ Optionally you can specify kerning and ligatures per font.
 ### Use GlyphLayoutManager for Letters from the Unicode Supplementary Multilingual Plane
 Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
-[GlyphLayoutSMP.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutSMP.java)
+[GlyphLayoutSMP.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutSMP.java)
 
 [GlyphLayoutSMP.pdf](https://github.com/user-attachments/files/26327026/GlyphLayoutSMP.pdf)
 
 ### Use GlyphLayoutManager with an image
 
-[GlyphLayoutWithImage.java](https://github.com/vk-github18/OpenPDF-vk/blob/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutWithImage.java)
+[GlyphLayoutWithImage.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutWithImage.java)
 [GlyphLayoutWithImage.pdf](https://github.com/user-attachments/files/26327030/GlyphLayoutWithImage.pdf)
 
 
