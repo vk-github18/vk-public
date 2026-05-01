@@ -211,3 +211,4 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 4. [DIN 91379:2022-08: Characters and defined character sequences in Unicode for the electronic processing of names and data exchange in Europe, with CD-ROM](https://www.beuth.de/de/norm/din-91379/353496133) (access chargeable)
 5. [Decision of IT Planungsrat 2022/51](https://www.it-planungsrat.de/beschluss/beschluss-2022-51) (in German)
 6. [HarfBuzz text shaping library](https://harfbuzz.github.io/)
+7. [HarfRust, HarfBuzz port to Rust](https://github.com/harfbuzz/harfrust)
