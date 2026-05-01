@@ -195,6 +195,7 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 ### Use GlyphLayoutManager with an image
 
 [GlyphLayoutWithImage.java](https://github.com/LibrePDF/OpenPDF/tree/master/pdf-toolbox/src/test/java/org/openpdf/examples/glyphlayout/GlyphLayoutWithImage.java)
+
 [GlyphLayoutWithImage.pdf](https://github.com/user-attachments/files/26327030/GlyphLayoutWithImage.pdf)
 
 
