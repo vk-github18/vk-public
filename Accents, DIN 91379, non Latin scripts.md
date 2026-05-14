@@ -230,7 +230,7 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
 [GlyphLayoutHtmlTest.html](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlTest.html)
 
-[GlyphLayoutHtmlTest.pdf](https://github.com/user-attachments/files/27761449/GlyphLayoutHtmlTest.pdf)
+[GlyphLayoutHtmlTest.pdf](https://github.com/user-attachments/files/27770733/GlyphLayoutHtmlTest.pdf)
 
 
 ## Open source OpenType fonts
