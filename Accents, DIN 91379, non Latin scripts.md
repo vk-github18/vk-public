@@ -17,7 +17,7 @@ Since `Java 9` these routines rely on the `HarfBuzz` shaping library.
 ## DIN 91379
 We tested this approach with letters conforming to "DIN 91379: Characters and defined character sequences in Unicode for the electronic processing of names and data exchange in Europe, with CD-ROM" (and the predecessor DIN SPEC 91379) which describes a subset of Unicode consisting mainly of Latin letters and diacritic signs. This standard is mandatory for the data exchange of the German administration with citizens and businesses since Nov. 2024.
 
-## Non-Latin scripts
+## Complex scripts
 The processing of text in other languages, bidirectional and complex scripts using this approach is possible, you are invited
 to try it and share the results.
 
