@@ -65,7 +65,7 @@ You enable advanced glyph layout by registering the glyphLayoutManager with the 
         }
 ```        
 You can also use the following form:
-```
+```java
         try (Document document = new Document()) {
             document.setGlyphLayoutManager(glyphLayoutManager);
             PdfWriter writer = PdfWriter.getInstance(document, Files.newOutputStream(Paths.get(fileName)));
