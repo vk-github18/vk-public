@@ -119,6 +119,35 @@ is thrown. All fonts have to be loaded with `GlyphLayoutManager.loadFont`.
 If you use `GlyphLayoutProcessor`, `FopGlyphProcessor` is switched off using `document.setGlyphSubstitutionEnabled(false)`.
 This call disables `FopGlyphProcessor`, and its functionality like glyph substitution and more will be provided by `GlyphLayoutManager`.
 
+## Usage for HTML files
+In addition to the default process for OpenPDF-html you have to create a `GlyphLayoutManager`,
+load the font with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
+
+```
+    public void test() throws Exception {
+        var html_filename = "GlyphLayoutHtmlTest.html";
+        var inputStream = this.getClass().getResourceAsStream(html_filename);
+        var documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        var document = documentBuilder.parse(inputStream);
+
+        var glyphLayoutManager = new GlyphLayoutManager();	// create GlyphLayoutManager
+        var fontUrl = this.getClass().getResource("fonts/Arimo-Regular.ttf");
+        var font = glyphLayoutManager.loadFont("Arimo-Regular.ttf", fontUrl.openStream(), 12.0f); // Load font for GlyphLayoutManager
+        var fontResolver = new ITextFontResolver();
+        fontResolver.addFont(font.getBaseFont(), fontUrl.getFile(), null);
+
+        var pdf_filename = "GlyphLayoutHtmlTest.pdf";
+        try (var outputStream = new FileOutputStream(pdf_filename)) {
+            var renderer = new ITextRenderer(fontResolver);
+            renderer.setDocument(document);
+            renderer.setGlyphLayoutManager(glyphLayoutManager); // Register GlyphLayoutManager with renderer
+            renderer.layout();
+            renderer.createPDF(outputStream);
+        }
+        System.out.println("PDF created: " + pdf_filename);
+    }
+```
+
 ## Examples
 ### Producing a document
 This example shows the correct rendering for all letters from [DIN 91379](https://en.wikipedia.org/wiki/DIN_91379).
