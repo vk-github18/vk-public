@@ -31,7 +31,7 @@ multithreading environment processing multiple documents in separate threads.
 Provide an OpenType font containing the necessary characters and positioning information, see below
 for some open source fonts.
 If no OpenType font is provided, GlyphLayoutManager will throw an exception.
-```
+```java
 	
 	import org.openpdf.text.pdf.GlyphLayoutManager;
 ...
@@ -44,7 +44,7 @@ If no OpenType font is provided, GlyphLayoutManager will throw an exception.
 ```
 You can also load the font from an input source. You have to supply a name for loading the font that ends
 with ".ttf" or ".otf".
-```
+```java
 	
 	import org.openpdf.text.pdf.GlyphLayoutManager;
 ...
@@ -58,7 +58,7 @@ If an error occurs while loading a font, a `GlyphLayoutFontManager.FontLoadExcep
 
 ### 2. Step: Enable advanced glyph layout
 You enable advanced glyph layout by registering the glyphLayoutManager with the Document.
-```
+```java
         try (Document document = new Document().setGlyphLayoutManager(glyphLayoutManager)) {
         	
         // proceed as usual
@@ -81,14 +81,14 @@ You can also use the following form:
 Optionally you can set the default `GlyphLayoutManager` font options before loading the fonts.
 These options are used for all fonts loaded with this `GlyphLayoutManager`.
 
-```
+```java
         GlyphLayoutManager glyphLayoutManager  =
                 new GlyphLayoutManager().setDefaultFontOptions(new FontOptions().setKerningOn().setLigaturesOn());
 ```        
 
 #### Options per font
 If you want to use different options, you can set the font options per font while loading the font.
-```
+```java
         Font serifKerning = glyphLayoutManager.loadFont(fontDir + "noto/NotoSerif-Regular.ttf", 
                 fontSize, new FontOptions().setKerningOn());
         Font serifLigatures = glyphLayoutManager.loadFont(fontDir + "noto/NotoSerif-Regular.ttf", 
@@ -123,28 +123,39 @@ This call disables `FopGlyphProcessor`, and its functionality like glyph substit
 In addition to the default process for OpenPDF-html you have to create a `GlyphLayoutManager`,
 load the font with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
 
-```
-    public void test() throws Exception {
-        var html_filename = "GlyphLayoutHtmlTest.html";
-        var inputStream = this.getClass().getResourceAsStream(html_filename);
+```java
+     public void test() throws Exception {
+        var htmlFilename = "GlyphLayoutHtmlExample.html";
+        var inputStream = this.getClass().getResourceAsStream(htmlFilename);
         var documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         var document = documentBuilder.parse(inputStream);
 
-        var glyphLayoutManager = new GlyphLayoutManager();	// create GlyphLayoutManager
-        var fontUrl = this.getClass().getResource("fonts/Arimo-Regular.ttf");
-        var font = glyphLayoutManager.loadFont("Arimo-Regular.ttf", fontUrl.openStream(), 12.0f); // Load font for GlyphLayoutManager
+        var glyphLayoutManager = new GlyphLayoutManager();
         var fontResolver = new ITextFontResolver();
-        fontResolver.addFont(font.getBaseFont(), fontUrl.getFile(), null);
 
-        var pdf_filename = "GlyphLayoutHtmlTest.pdf";
-        try (var outputStream = new FileOutputStream(pdf_filename)) {
+        loadFont(glyphLayoutManager, fontResolver, "Arimo-Regular.ttf", "fonts/arimo/Arimo-Regular.ttf");
+        loadFont(glyphLayoutManager, fontResolver, "Arimo-Bold.ttf", "fonts/arimo/Arimo-Bold.ttf");
+
+        var pdfFilename = "GlyphLayoutHtmlExample.pdf";
+        try (var outputStream = new FileOutputStream(pdfFilename)) {
             var renderer = new ITextRenderer(fontResolver);
             renderer.setDocument(document);
-            renderer.setGlyphLayoutManager(glyphLayoutManager); // Register GlyphLayoutManager with renderer
+            renderer.setGlyphLayoutManager(glyphLayoutManager);
             renderer.layout();
             renderer.createPDF(outputStream);
         }
-        System.out.println("PDF created: " + pdf_filename);
+        System.out.println("PDF created: " + pdfFilename);
+    }
+
+    private void loadFont(GlyphLayoutManager glyphLayoutManager, ITextFontResolver fontResolver,
+            String fontName, String fontResourcePath)
+            throws IOException, GlyphLayoutFontManager.FontLoadException {
+        var fontUrl = this.getClass().getResource(fontResourcePath);
+        Objects.requireNonNull(fontUrl, "Font not found: " + fontResourcePath);
+        var fontStream = fontUrl.openStream();
+        var font = glyphLayoutManager.loadFont(fontName, fontStream, 12.0f);
+        fontStream.close();
+        fontResolver.addFont(font.getBaseFont(), fontUrl.getFile(), null);
     }
 ```
 
@@ -226,11 +237,11 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
 ### Use GlyphLayoutManager with an HTML file
 
-[GlyphLayoutHtmlTest.java](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlTest.java)
+[GlyphLayoutHtmlTest.java](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlExample.java)
 
-[GlyphLayoutHtmlTest.html](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlTest.html)
+[GlyphLayoutHtmlTest.html](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlExample.html)
 
-[GlyphLayoutHtmlTest.pdf](https://github.com/user-attachments/files/27770733/GlyphLayoutHtmlTest.pdf)
+[GlyphLayoutHtmlExample.pdf](https://github.com/user-attachments/files/27773303/GlyphLayoutHtmlExample.pdf)
 
 
 ## Open source OpenType fonts
