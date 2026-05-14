@@ -224,6 +224,14 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
 [GlyphLayoutWithImage.pdf](https://github.com/user-attachments/files/26327030/GlyphLayoutWithImage.pdf)
 
+### Use GlyphLayoutManager with an HTML file
+
+[GlyphLayoutHtmlTest.java](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlTest.java)
+
+[GlyphLayoutHtmlTest.html](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlTest.html)
+
+[GlyphLayoutHtmlTest.pdf]()
+
 
 ## Open source OpenType fonts
 1. [Google Noto fonts.](https://www.google.com/get/noto/), [Latin, Greek, Cyrillic at GitHub](https://github.com/notofonts/latin-greek-cyrillic)
