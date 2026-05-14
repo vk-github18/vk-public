@@ -121,7 +121,7 @@ This call disables `FopGlyphProcessor`, and its functionality like glyph substit
 
 ## Usage for HTML files
 In addition to the default process for OpenPDF-html you have to create a `GlyphLayoutManager`,
-load the font with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
+load the fonts with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
 
 ```java
      public void test() throws Exception {
