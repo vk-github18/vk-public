@@ -1,4 +1,4 @@
-# Accents, DIN 91379, non Latin scripts, glyph layout
+# Accents, DIN 91379, complex scripts, glyph layout
 
 ## Correct positioning of accents
 To process text containing letters composed of multiple Unicode glyphs e.g. letters with accents,
