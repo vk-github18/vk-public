@@ -6,7 +6,7 @@ it is necessary to compute the correct positioning of the glyphs and code this p
 PDF file. For complex scripts glyph substitution and reordering is necessary.
 
 OpenPDF can process such texts starting with release 1.3.24.
-This page describes the usage for release 3.0.5 or newer with `GlyphLayoutManager`.
+This page describes the usage for release 3.0.4 or newer with `GlyphLayoutManager`.
 
 For release 3.0.3 using (the now deprecated) `LayoutProcessor` see [Accents, DIN 91379, non Latin scripts (2026-04-02)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5654d29adfebf5100edabdde2d2792b74fa66fbe),
 for older releases see [Accents, DIN 91379, non Latin scripts (2025-06-06)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5d4f967472cc1459cb484adfa86e4ad1db19b8cc).
@@ -119,7 +119,7 @@ is thrown. All fonts have to be loaded with `GlyphLayoutManager.loadFont`.
 If you use `GlyphLayoutProcessor`, `FopGlyphProcessor` is switched off using `document.setGlyphSubstitutionEnabled(false)`.
 This call disables `FopGlyphProcessor`, and its functionality like glyph substitution and more will be provided by `GlyphLayoutManager`.
 
-## Usage for HTML files
+## Usage for HTML files (since Version 3.05)
 In addition to the default process for OpenPDF-html you have to create a `GlyphLayoutManager`,
 load the fonts with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
 
@@ -226,7 +226,7 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
 [GlyphLayoutWithImage.pdf](https://github.com/user-attachments/files/26327030/GlyphLayoutWithImage.pdf)
 
-### Use GlyphLayoutManager with an HTML file
+### Use GlyphLayoutManager with an HTML file (since Version 3.05)
 
 [GlyphLayoutHtmlTest.java](https://github.com/LibrePDF/OpenPDF/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlExample.java)
 
