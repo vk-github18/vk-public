@@ -6,7 +6,7 @@ it is necessary to compute the correct positioning of the glyphs and code this p
 PDF file. For complex scripts glyph substitution and reordering is necessary.
 
 OpenPDF can process such texts starting with release 1.3.24.
-This page describes the usage for release 3.0.4 or newer with `GlyphLayoutManager`.
+This page describes the usage for release 3.0.5 or newer with `GlyphLayoutManager`.
 
 For release 3.0.3 using (the now deprecated) `LayoutProcessor` see [Accents, DIN 91379, non Latin scripts (2026-04-02)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5654d29adfebf5100edabdde2d2792b74fa66fbe),
 for older releases see [Accents, DIN 91379, non Latin scripts (2025-06-06)](https://github.com/LibrePDF/OpenPDF/wiki/Accents,-DIN-91379,-non-Latin-scripts/5d4f967472cc1459cb484adfa86e4ad1db19b8cc).
@@ -124,7 +124,7 @@ In addition to the default process for OpenPDF-html you have to create a `GlyphL
 load the fonts with `GlyphLayoutManager` and register the `GlyphLayoutManager` with the `ITextRenderer`.
 
 ```java
-     public void test() throws Exception {
+    public void test() throws Exception {
         var htmlFilename = "GlyphLayoutHtmlExample.html";
         var inputStream = this.getClass().getResourceAsStream(htmlFilename);
         var documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -133,8 +133,10 @@ load the fonts with `GlyphLayoutManager` and register the `GlyphLayoutManager` w
         var glyphLayoutManager = new GlyphLayoutManager();
         var fontResolver = new ITextFontResolver();
 
-        loadFont(glyphLayoutManager, fontResolver, "Arimo-Regular.ttf", "fonts/arimo/Arimo-Regular.ttf");
-        loadFont(glyphLayoutManager, fontResolver, "Arimo-Bold.ttf", "fonts/arimo/Arimo-Bold.ttf");
+        loadFont(glyphLayoutManager, fontResolver, "Arimo-Regular.ttf", 12.0f,
+                "fonts/arimo/Arimo-Regular.ttf");
+        loadFont(glyphLayoutManager, fontResolver, "Arimo-Bold.ttf", 12.0f,
+                "fonts/arimo/Arimo-Bold.ttf");
 
         var pdfFilename = "GlyphLayoutHtmlExample.pdf";
         try (var outputStream = new FileOutputStream(pdfFilename)) {
@@ -145,17 +147,6 @@ load the fonts with `GlyphLayoutManager` and register the `GlyphLayoutManager` w
             renderer.createPDF(outputStream);
         }
         System.out.println("PDF created: " + pdfFilename);
-    }
-
-    private void loadFont(GlyphLayoutManager glyphLayoutManager, ITextFontResolver fontResolver,
-            String fontName, String fontResourcePath)
-            throws IOException, GlyphLayoutFontManager.FontLoadException {
-        var fontUrl = this.getClass().getResource(fontResourcePath);
-        Objects.requireNonNull(fontUrl, "Font not found: " + fontResourcePath);
-        var fontStream = fontUrl.openStream();
-        var font = glyphLayoutManager.loadFont(fontName, fontStream, 12.0f);
-        fontStream.close();
-        fontResolver.addFont(font.getBaseFont(), fontUrl.getFile(), null);
     }
 ```
 
@@ -237,9 +228,9 @@ Show letters and symbols from the Unicode Supplementary Multilingual Plane,
 
 ### Use GlyphLayoutManager with an HTML file
 
-[GlyphLayoutHtmlTest.java](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlExample.java)
+[GlyphLayoutHtmlTest.java](https://github.com/LibrePDF/OpenPDF/blob/test-2026-05-14/openpdf-html/src/test/java/org/openpdf/pdf/GlyphLayoutHtmlExample.java)
 
-[GlyphLayoutHtmlTest.html](https://github.com/vk-github18/OpenPDF-vk/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlExample.html)
+[GlyphLayoutHtmlTest.html](https://github.com/LibrePDF/OpenPDF/blob/test-2026-05-14/openpdf-html/src/test/resources/org/openpdf/pdf/GlyphLayoutHtmlExample.html)
 
 [GlyphLayoutHtmlExample.pdf](https://github.com/user-attachments/files/27773303/GlyphLayoutHtmlExample.pdf)
 
